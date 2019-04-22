@@ -18,7 +18,6 @@ import org.testng.annotations.Test;
 
 import com.google.common.base.Function;
 
-import javafx.util.Duration;
 public class Topic_13_WaitII {
 	WebDriver driver;
 	By startbtn = By.xpath("//div[@id='start']/button");
@@ -32,7 +31,7 @@ public class Topic_13_WaitII {
 		driver = new FirefoxDriver();
 		driver.manage().window().maximize(); 
 	  }
-	@Test
+	
 	public void TC_05_AjaxLoading_WithoutExplicitWait() {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("https://demos.telerik.com/aspnet-ajax/ajaxloadingpanel/functionality/explicit-show-hide/defaultcs.aspx");
@@ -54,7 +53,7 @@ public class Topic_13_WaitII {
 		Assert.assertEquals(afterDateSelected, "Wednesday, April 17, 2019");
 	}
 
-	@Test
+	
 	public void TC_05_AjaxLoading_WithExplicitWait() {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("https://demos.telerik.com/aspnet-ajax/ajaxloadingpanel/functionality/explicit-show-hide/defaultcs.aspx");
@@ -92,21 +91,21 @@ public class Topic_13_WaitII {
 		// Khởi tạo Fluent wait
 		new FluentWait<WebElement>(countdount)
 		           // Tổng time wait là 15s
-//		           .withTimeout(Duration.seconds(15))
+		           .withTimeout(15, TimeUnit.SECONDS)
 		            // Tần số mỗi 1s check 1 lần
-//		            .pollingEvery(Duration.seconds(1))
+		            .pollingEvery(500, TimeUnit.MILLISECONDS)
 		           // Nếu gặp exception là find ko thấy element sẽ bỏ  qua
-//		            .ignoring(NoSuchElementException.class)
+		            .ignoring(NoSuchElementException.class)
 		            // Kiểm tra điều kiện
 		            .until(new Function<WebElement, Boolean>() {
-		                @Test
-						public Boolean apply(WebElement element) {
+		                public Boolean apply(WebElement element) {
 		                           // Kiểm tra điều kiện countdount = 00
 		                           boolean flag =  element.getText().endsWith("00");
 		                           System.out.println("Time = " +  element.getText());
 		                           // return giá trị cho function apply
 		                           return flag;
 		                }
+		         
 		           });
 	}
 
