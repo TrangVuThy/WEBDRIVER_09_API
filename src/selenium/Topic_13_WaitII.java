@@ -78,7 +78,7 @@ public class Topic_13_WaitII {
 
 		Assert.assertEquals(afterDateSelected, "Wednesday, April 17, 2019");
 	}
-
+///
 	@Test
 	public void TC_06_FluentWait() {
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
