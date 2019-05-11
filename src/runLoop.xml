@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Selenium WebDriver API">
+
+  <test name="run test on CHROME browser">
+
+    <classes>
+      <class name="testng.Topic_07_Loop"/>
+    </classes>
+  </test> <!-- Test -->
+  
+
+</suite> <!-- Suite -->

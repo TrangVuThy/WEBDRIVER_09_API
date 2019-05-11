@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Test suit 03"  parallel="tests" thread-count="3">
+
+  
+<suite-files>
+<suite-file path="run01.xml"></suite-file>
+<suite-file path="run02.xml"> </suite-file>
+
+</suite-files>
+
+</suite> <!-- Suite -->
